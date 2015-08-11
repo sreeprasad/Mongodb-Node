@@ -1,0 +1,17 @@
+<html>
+
+<form action='/favorite_fruit' method='POST'>
+
+<p> What is your favorite fruit </p>
+
+{%for fruit in fruits%}
+<p>
+	<input type="radio" value='{{fruit}}' name='fruit'>{{fruit}}</input>
+</p>	
+{% endfor %}
+
+<input type="submit" value="Submit"/>
+</form>
+
+</html>
+<!doctype HTML>

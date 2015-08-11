@@ -1,0 +1,57 @@
+# create collection
+use test 
+
+# create document "things" and save json
+db.things.save ({a:1,b:2,c:3})
+
+# find all documents in things
+db.things.find()
+
+# add new document with json
+db.things.save ({a:1,b:2,c:3,d:4})
+
+# find specific documents
+db.things.find({d:4})
+
+
+db.things.save({a:1,b:1, fruits:["apple", "orange", "pear"] })
+
+db.things.save(
+	{
+		name:"sreeprasad",
+		address: {
+					street :"29 street",
+					direction :"335 west",
+					city :"New York",
+					house_number :"4b"
+				}
+	}
+)
+
+db.things.find().pretty()
+
+
+##########################
+
+
+mvn archetype:generate
+cd M101J
+mvn clean compile exec:java -Dexec.mainClass=com.mongodb.App
+
+
+db.hello_mongo_express.save ({name:'Sreeprasad'})
+
+mongod --dbpath=/data/db
+
+restore with a different name
+-------
+mongorestore -d m101js dump
+MongoClient.connect('mongodb://localhost:27017/m101js',...
+
+
+Save does wraps an insert and update command. If the document exists it uses update. If it doesn't it uses save.
+Insert will only insert a new document and give you an error if the _id already exists.
+
+
+
+ 
